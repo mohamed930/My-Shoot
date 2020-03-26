@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  SaveImageViewController.swift
 //  My Shoot
 //
 //  Created by Mohamed Ali on 3/24/20.
@@ -8,13 +8,16 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class SaveImageViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func BTNBack(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
 }
-
