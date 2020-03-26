@@ -13,6 +13,7 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     // TODO: This Sektion For Intialize Varible Here.
     @IBOutlet weak var AddProbertiy: UIButton!
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var ProfileImage: UIButton!
     var Arr = ["Animals","Natural","Anime"]
     
     override func viewDidLoad() {
@@ -51,6 +52,11 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
         
         present(alert, animated: true, completion: nil)
         
+    }
+    
+    // TODO: This Action Method For UpdateProfile For USER Or Add Image To App For ADMIN.
+    @IBAction func BTNProfile(_ sender: Any) {
+        self.performSegue(withIdentifier: "UpdateProfile", sender: self)
     }
     
     // TODO: These Method For TableView.

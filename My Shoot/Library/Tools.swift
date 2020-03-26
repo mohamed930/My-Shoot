@@ -16,4 +16,12 @@ class Tools {
         textfield.leftViewMode = .always
         textfield.placeholder = Text
     }
+    
+    public static func MakeCircle (_ image:AnyObject) {
+        image.layer.borderWidth = 1
+        image.layer.masksToBounds = false
+        image.layer.backgroundColor = UIColor.black.cgColor
+        image.layer.borderColor = UIColor.black.cgColor
+        image.layer.cornerRadius = image.frame.height/2
+    }
 }

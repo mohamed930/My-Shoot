@@ -22,7 +22,8 @@ class SignUpViewController: UIViewController , UITextFieldDelegate, UIImagePicke
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        MakeCircle(ProfileImage)
+        Tools.MakeCircle(ProfileImage)
+         ProfileImage.clipsToBounds = true
         setPadding()
         
         Scroll.keyboardDismissMode = .interactive
@@ -59,17 +60,6 @@ class SignUpViewController: UIViewController , UITextFieldDelegate, UIImagePicke
         self.dismiss(animated: true, completion: nil)
     }
     
-
-    
-    
-    func MakeCircle (_ image:AnyObject) {
-        image.layer.borderWidth = 1
-        image.layer.masksToBounds = false
-        image.layer.backgroundColor = UIColor.black.cgColor
-        image.layer.borderColor = UIColor.black.cgColor
-        image.layer.cornerRadius = image.frame.height/2
-        ProfileImage.clipsToBounds = true
-    }
     
     func setPadding() {
         Tools.setLeftPadding(textfield: TXTName, Text: "Enter Your Name Here", padding: 25.0)
