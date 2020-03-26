@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignUp-Transitioanl-Logo-Large" translatesAutoresizingMaskIntoConstraints="NO" id="Qef-Wq-0hq">
-                                <rect key="frame" x="0.0" y="102" width="375" height="114"/>
+                                <rect key="frame" x="0.0" y="102" width="375.00000000000006" height="114"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="114" id="DCc-Y6-nLu"/>
                                 </constraints>
@@ -179,6 +179,130 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHR-Zp-EMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="132" y="-525.3694581280788"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="1Mf-Mo-4xY">
+            <objects>
+                <viewController id="ZTa-7b-aTW" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dfQ-DZ-0Pw">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dl9-Px-tLX">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="88"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flix Coin" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jJ8-B8-lfp">
+                                        <rect key="frame" x="87" y="34" width="200" height="46"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="46" id="fdQ-At-VQa"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="26"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rI3-ny-vgo">
+                                        <rect key="frame" x="20" y="34" width="41" height="44"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="44" id="3nU-7N-Uez"/>
+                                            <constraint firstAttribute="width" constant="41" id="8Xt-hJ-3kr"/>
+                                        </constraints>
+                                        <state key="normal" backgroundImage="BTNBack"/>
+                                        <connections>
+                                            <action selector="BTNback:" destination="2Ua-XB-N8l" eventType="touchUpInside" id="fET-L0-GFF"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" red="0.91053085079999996" green="0.42972912060000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstItem="jJ8-B8-lfp" firstAttribute="leading" secondItem="rI3-ny-vgo" secondAttribute="trailing" constant="26" id="1Lf-2q-Xyq"/>
+                                    <constraint firstItem="jJ8-B8-lfp" firstAttribute="top" secondItem="dl9-Px-tLX" secondAttribute="top" constant="34" id="HO7-iB-5ZS"/>
+                                    <constraint firstItem="rI3-ny-vgo" firstAttribute="top" secondItem="dl9-Px-tLX" secondAttribute="top" constant="34" id="XkN-D3-yrN"/>
+                                    <constraint firstAttribute="bottom" secondItem="jJ8-B8-lfp" secondAttribute="bottom" constant="8" id="hLC-ue-VW1"/>
+                                    <constraint firstAttribute="height" constant="88" id="lEI-SQ-c6N"/>
+                                    <constraint firstAttribute="trailing" secondItem="jJ8-B8-lfp" secondAttribute="trailing" constant="88" id="mUR-dy-CJp"/>
+                                    <constraint firstItem="rI3-ny-vgo" firstAttribute="leading" secondItem="dl9-Px-tLX" secondAttribute="leading" constant="20" id="oPB-2v-PEd"/>
+                                    <constraint firstAttribute="bottom" secondItem="rI3-ny-vgo" secondAttribute="bottom" constant="10" id="v1g-J6-SqS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.76862745099999996" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="dl9-Px-tLX" firstAttribute="leading" secondItem="Wwd-0s-XXL" secondAttribute="leading" id="DzT-S6-GHa"/>
+                            <constraint firstItem="dl9-Px-tLX" firstAttribute="top" secondItem="dfQ-DZ-0Pw" secondAttribute="top" id="cUF-u4-RAh"/>
+                            <constraint firstItem="dl9-Px-tLX" firstAttribute="trailing" secondItem="Wwd-0s-XXL" secondAttribute="trailing" id="wjl-nD-vpZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Wwd-0s-XXL"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JVT-KG-koF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856.79999999999995" y="-1177.0935960591135"/>
+        </scene>
+        <!--Charge Flix View Controller-->
+        <scene sceneID="FPV-2I-3tm">
+            <objects>
+                <viewController id="v3e-ek-IQ8" customClass="ChargeFlixViewController" customModule="My_Shoot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="kq5-ud-GLS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Jc-pD-F59">
+                                <rect key="frame" x="16" y="44" width="60" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="W8i-6f-xBh"/>
+                                    <constraint firstAttribute="height" constant="59" id="aCp-uE-tJB"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="BTNBack"/>
+                                <connections>
+                                    <action selector="BTNBack:" destination="v3e-ek-IQ8" eventType="touchUpInside" id="5cP-KD-eyH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Charge Coins" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yvk-Rl-2Zk">
+                                <rect key="frame" x="75" y="97" width="225" height="43"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="43" id="DwY-VG-JT1"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="AmericanTypewriter-Condensed" family="American Typewriter" pointSize="32"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" pagingEnabled="YES" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="EZK-N7-9b3">
+                                <rect key="frame" x="0.0" y="148" width="375" height="664"/>
+                                <color key="backgroundColor" red="1" green="0.89208373730000001" blue="0.18863322630000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yXc-6F-pRv">
+                                    <size key="itemSize" width="50" height="50"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells/>
+                                <connections>
+                                    <outlet property="dataSource" destination="v3e-ek-IQ8" id="GPz-Fd-9db"/>
+                                    <outlet property="delegate" destination="v3e-ek-IQ8" id="rNv-Im-8VR"/>
+                                </connections>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.19215686274509802" green="0.23529411764705882" blue="0.32156862745098036" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="EZK-N7-9b3" firstAttribute="top" secondItem="Yvk-Rl-2Zk" secondAttribute="bottom" constant="8" id="Ds0-Xx-Ve6"/>
+                            <constraint firstItem="Yvk-Rl-2Zk" firstAttribute="top" secondItem="VqM-7m-xuf" secondAttribute="top" constant="53" id="FwU-Bd-jNV"/>
+                            <constraint firstItem="EZK-N7-9b3" firstAttribute="trailing" secondItem="VqM-7m-xuf" secondAttribute="trailing" id="G1h-Ra-8XG"/>
+                            <constraint firstItem="8Jc-pD-F59" firstAttribute="top" secondItem="VqM-7m-xuf" secondAttribute="top" id="Kjc-7y-uTY"/>
+                            <constraint firstItem="8Jc-pD-F59" firstAttribute="leading" secondItem="VqM-7m-xuf" secondAttribute="leading" constant="16" id="Qti-GF-Vga"/>
+                            <constraint firstItem="EZK-N7-9b3" firstAttribute="leading" secondItem="VqM-7m-xuf" secondAttribute="leading" id="Wzc-DT-u87"/>
+                            <constraint firstAttribute="bottom" secondItem="EZK-N7-9b3" secondAttribute="bottom" id="eVc-sZ-9bA"/>
+                            <constraint firstItem="VqM-7m-xuf" firstAttribute="trailing" secondItem="Yvk-Rl-2Zk" secondAttribute="trailing" constant="75" id="h7v-Bh-5MK"/>
+                            <constraint firstItem="Yvk-Rl-2Zk" firstAttribute="leading" secondItem="VqM-7m-xuf" secondAttribute="leading" constant="75" id="ojM-4D-KpZ"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="VqM-7m-xuf"/>
+                    </view>
+                    <connections>
+                        <outlet property="collectionView" destination="EZK-N7-9b3" id="p1Q-oE-cLf"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="fzI-kb-gUL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="856.52173913043487" y="-525.66964285714289"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -446,7 +570,7 @@
                                 </connections>
                             </textField>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZO-50-2B3">
-                                <rect key="frame" x="0.0" y="456" width="375" height="96"/>
+                                <rect key="frame" x="0.0" y="456" width="336" height="96"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="96" id="qfu-R7-0hm"/>
@@ -555,6 +679,9 @@
                                                     <constraint firstAttribute="width" constant="19" id="eGt-7e-W4n"/>
                                                 </constraints>
                                                 <state key="normal" backgroundImage="BTNAdd"/>
+                                                <connections>
+                                                    <action selector="BTNAddFlix:" destination="ivK-gQ-dNf" eventType="touchUpInside" id="eBB-vF-Ou5"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.35686274509999999" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -646,6 +773,8 @@
                         <segue destination="2Ua-XB-N8l" kind="showDetail" identifier="CollectionPhoto" id="pfn-YN-FyU"/>
                         <segue destination="46R-hE-Dzc" kind="showDetail" identifier="UpdateProfile" id="SWT-ge-imN"/>
                         <segue destination="ad8-R6-eeG" kind="showDetail" identifier="AddPhoto" id="v7U-Y5-y77"/>
+                        <segue destination="v3e-ek-IQ8" kind="showDetail" identifier="ChargeFlix" id="Z69-0o-vBQ"/>
+                        <segue destination="ZTa-7b-aTW" kind="showDetail" identifier="SendFlix" id="lBD-0P-kku"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l1C-VB-mdw" userLabel="First Responder" sceneMemberID="firstResponder"/>

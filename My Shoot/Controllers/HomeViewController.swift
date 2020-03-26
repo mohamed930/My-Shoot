@@ -59,6 +59,11 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
         self.performSegue(withIdentifier: "AddPhoto", sender: self)
     }
     
+    // TODO: This Action Method For Add Flix Coin.
+    @IBAction func BTNAddFlix(_ sender: Any) {
+        self.performSegue(withIdentifier: "ChargeFlix", sender: self)
+    }
+    
     // TODO: These Method For TableView.
     // ---------------------------------------
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

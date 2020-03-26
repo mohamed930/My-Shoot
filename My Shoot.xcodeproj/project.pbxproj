@@ -24,6 +24,9 @@
 		D3516910242A9BDC007E655D /* CatagoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D351690E242A9BDC007E655D /* CatagoryCell.xib */; };
 		D3C6F79F242CEDCD00F65C9D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6F79E242CEDCD00F65C9D /* ProfileViewController.swift */; };
 		D3C6F7A1242CFDDC00F65C9D /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6F7A0242CFDDC00F65C9D /* AddImageViewController.swift */; };
+		D3C6F7A8242D094700F65C9D /* ChargeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6F7A6242D094700F65C9D /* ChargeCell.swift */; };
+		D3C6F7A9242D094700F65C9D /* ChargeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3C6F7A7242D094700F65C9D /* ChargeCell.xib */; };
+		D3C6F7AB242D0AFA00F65C9D /* ChargeFlixViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6F7AA242D0AFA00F65C9D /* ChargeFlixViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +49,9 @@
 		D351690E242A9BDC007E655D /* CatagoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatagoryCell.xib; sourceTree = "<group>"; };
 		D3C6F79E242CEDCD00F65C9D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D3C6F7A0242CFDDC00F65C9D /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
+		D3C6F7A6242D094700F65C9D /* ChargeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeCell.swift; sourceTree = "<group>"; };
+		D3C6F7A7242D094700F65C9D /* ChargeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ChargeCell.xib; sourceTree = "<group>"; };
+		D3C6F7AA242D0AFA00F65C9D /* ChargeFlixViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChargeFlixViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +122,7 @@
 				D31A334E242AC96100B90350 /* SaveImageViewController.swift */,
 				D3C6F79E242CEDCD00F65C9D /* ProfileViewController.swift */,
 				D3C6F7A0242CFDDC00F65C9D /* AddImageViewController.swift */,
+				D3C6F7AA242D0AFA00F65C9D /* ChargeFlixViewController.swift */,
 				D3516901242A6483007E655D /* Cell */,
 			);
 			path = Controllers;
@@ -128,6 +135,8 @@
 				D3516903242A64B5007E655D /* ImageCell.xib */,
 				D351690D242A9BDC007E655D /* CatagoryCell.swift */,
 				D351690E242A9BDC007E655D /* CatagoryCell.xib */,
+				D3C6F7A6242D094700F65C9D /* ChargeCell.swift */,
+				D3C6F7A7242D094700F65C9D /* ChargeCell.xib */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -199,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D35168F7242A6217007E655D /* LaunchScreen.storyboard in Resources */,
+				D3C6F7A9242D094700F65C9D /* ChargeCell.xib in Resources */,
 				D3516905242A64B5007E655D /* ImageCell.xib in Resources */,
 				D35168F4242A6217007E655D /* Assets.xcassets in Resources */,
 				D3516910242A9BDC007E655D /* CatagoryCell.xib in Resources */,
@@ -216,6 +226,7 @@
 				D31A334D242ABBD100B90350 /* ImagesViewController.swift in Sources */,
 				D351690A242A77F8007E655D /* SignUpViewController.swift in Sources */,
 				D3C6F7A1242CFDDC00F65C9D /* AddImageViewController.swift in Sources */,
+				D3C6F7A8242D094700F65C9D /* ChargeCell.swift in Sources */,
 				D35168EC242A6211007E655D /* ViewController.swift in Sources */,
 				D3516904242A64B5007E655D /* ImageCell.swift in Sources */,
 				D35168F2242A6211007E655D /* My_Shoot.xcdatamodeld in Sources */,
@@ -223,6 +234,7 @@
 				D3C6F79F242CEDCD00F65C9D /* ProfileViewController.swift in Sources */,
 				D35168EA242A6211007E655D /* AppDelegate.swift in Sources */,
 				D351690C242A9200007E655D /* HomeViewController.swift in Sources */,
+				D3C6F7AB242D0AFA00F65C9D /* ChargeFlixViewController.swift in Sources */,
 				D3516908242A6B02007E655D /* Tools.swift in Sources */,
 				D351690F242A9BDC007E655D /* CatagoryCell.swift in Sources */,
 			);
