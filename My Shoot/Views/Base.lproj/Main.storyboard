@@ -407,20 +407,107 @@
             </objects>
             <point key="canvasLocation" x="477.60000000000002" y="882.26600985221683"/>
         </scene>
-        <!--View Controller-->
+        <!--Add Image View Controller-->
         <scene sceneID="kgN-tR-5t0">
             <objects>
-                <viewController id="ad8-R6-eeG" sceneMemberID="viewController">
+                <viewController id="ad8-R6-eeG" customClass="AddImageViewController" customModule="My_Shoot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Dlw-OR-RJN">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7QN-WO-4G3">
+                                <rect key="frame" x="16" y="44" width="60" height="59"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="59" id="bPD-jb-G0g"/>
+                                    <constraint firstAttribute="width" constant="60" id="cWT-Jp-4wn"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="BTNBack"/>
+                                <connections>
+                                    <action selector="BTNBack:" destination="ad8-R6-eeG" eventType="touchUpInside" id="8f8-ou-T8o"/>
+                                    <action selector="BTNBack:" destination="46R-hE-Dzc" eventType="touchUpInside" id="kRL-wj-hUA"/>
+                                </connections>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="load_image" translatesAutoresizingMaskIntoConstraints="NO" id="9zC-Pw-pa3">
+                                <rect key="frame" x="0.0" y="119" width="375" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="233" id="yfC-Qq-9bA"/>
+                                </constraints>
+                            </imageView>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" background="EmptyText" translatesAutoresizingMaskIntoConstraints="NO" id="6uw-UW-sCa">
+                                <rect key="frame" x="53" y="393" width="268" height="37"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="37" id="2hx-SE-mpF"/>
+                                </constraints>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <connections>
+                                    <outlet property="delegate" destination="ad8-R6-eeG" id="KIw-Jq-FZS"/>
+                                </connections>
+                            </textField>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="bZO-50-2B3">
+                                <rect key="frame" x="0.0" y="456" width="375" height="96"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="96" id="qfu-R7-0hm"/>
+                                </constraints>
+                                <connections>
+                                    <outlet property="dataSource" destination="ad8-R6-eeG" id="6Z4-ny-st7"/>
+                                    <outlet property="delegate" destination="ad8-R6-eeG" id="ukf-Up-ar4"/>
+                                </connections>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mZ-rA-JF5">
+                                <rect key="frame" x="0.0" y="119" width="375" height="233"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="375" id="h6W-qX-VjB"/>
+                                    <constraint firstAttribute="height" constant="233" id="p2k-vy-z5T"/>
+                                </constraints>
+                                <connections>
+                                    <action selector="BTNPickImage:" destination="ad8-R6-eeG" eventType="touchUpInside" id="mKh-XD-BPd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wj3-uN-86v">
+                                <rect key="frame" x="53" y="608" width="268" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="2J8-d8-98M"/>
+                                </constraints>
+                                <state key="normal" backgroundImage="BTNAddImage"/>
+                                <connections>
+                                    <action selector="BTNAddImage:" destination="ad8-R6-eeG" eventType="touchUpInside" id="LXF-RK-9hQ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.0" green="0.76862745099999996" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bZO-50-2B3" firstAttribute="top" secondItem="6uw-UW-sCa" secondAttribute="bottom" constant="26" id="07c-QC-rOj"/>
+                            <constraint firstItem="7QN-WO-4G3" firstAttribute="top" secondItem="673-Ua-d6I" secondAttribute="top" id="Bsv-ab-ens"/>
+                            <constraint firstItem="673-Ua-d6I" firstAttribute="trailing" secondItem="6uw-UW-sCa" secondAttribute="trailing" constant="54" id="E0l-JO-IRO"/>
+                            <constraint firstItem="wj3-uN-86v" firstAttribute="leading" secondItem="6uw-UW-sCa" secondAttribute="leading" id="HWY-db-3sD"/>
+                            <constraint firstItem="1mZ-rA-JF5" firstAttribute="trailing" secondItem="673-Ua-d6I" secondAttribute="trailing" id="Muy-Az-Gez"/>
+                            <constraint firstItem="6uw-UW-sCa" firstAttribute="top" secondItem="1mZ-rA-JF5" secondAttribute="bottom" constant="41" id="Shj-yH-CQj"/>
+                            <constraint firstItem="wj3-uN-86v" firstAttribute="trailing" secondItem="6uw-UW-sCa" secondAttribute="trailing" id="Xo8-wp-ieQ"/>
+                            <constraint firstItem="6uw-UW-sCa" firstAttribute="top" secondItem="9zC-Pw-pa3" secondAttribute="bottom" constant="41" id="c8v-Vp-3z0"/>
+                            <constraint firstItem="9zC-Pw-pa3" firstAttribute="trailing" secondItem="673-Ua-d6I" secondAttribute="trailing" id="eJ8-p6-xtI"/>
+                            <constraint firstItem="6uw-UW-sCa" firstAttribute="leading" secondItem="673-Ua-d6I" secondAttribute="leading" constant="53" id="ist-Pu-FAO"/>
+                            <constraint firstItem="9zC-Pw-pa3" firstAttribute="top" secondItem="7QN-WO-4G3" secondAttribute="bottom" constant="16" id="kK3-E0-AO8"/>
+                            <constraint firstItem="9zC-Pw-pa3" firstAttribute="leading" secondItem="673-Ua-d6I" secondAttribute="leading" id="kwP-FE-9OG"/>
+                            <constraint firstItem="bZO-50-2B3" firstAttribute="leading" secondItem="673-Ua-d6I" secondAttribute="leading" id="pi8-If-YAA"/>
+                            <constraint firstItem="1mZ-rA-JF5" firstAttribute="leading" secondItem="673-Ua-d6I" secondAttribute="leading" id="qOd-dM-pX7"/>
+                            <constraint firstItem="bZO-50-2B3" firstAttribute="trailing" secondItem="673-Ua-d6I" secondAttribute="trailing" id="vBq-As-xsi"/>
+                            <constraint firstItem="7QN-WO-4G3" firstAttribute="leading" secondItem="673-Ua-d6I" secondAttribute="leading" constant="16" id="vd8-Wd-OhM"/>
+                            <constraint firstItem="1mZ-rA-JF5" firstAttribute="top" secondItem="7QN-WO-4G3" secondAttribute="bottom" constant="16" id="waI-ft-ljG"/>
+                            <constraint firstItem="wj3-uN-86v" firstAttribute="top" secondItem="bZO-50-2B3" secondAttribute="bottom" constant="56" id="z33-M9-mOI"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="673-Ua-d6I"/>
                     </view>
+                    <connections>
+                        <outlet property="Image" destination="9zC-Pw-pa3" id="GXz-3q-VSM"/>
+                        <outlet property="TXTFlixCoast" destination="6uw-UW-sCa" id="yNf-Or-R5m"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MNP-IT-X64" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1238" y="883"/>
+            <point key="canvasLocation" x="1237.5999999999999" y="882.26600985221683"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="b1d-Ul-wbL">
@@ -728,6 +815,7 @@
     <resources>
         <image name="10211761" width="269" height="259"/>
         <image name="BTNAdd" width="19" height="19"/>
+        <image name="BTNAddImage" width="353" height="55"/>
         <image name="BTNBack" width="52" height="52"/>
         <image name="BTNLogin" width="353" height="55"/>
         <image name="BTNPassword" width="353" height="55"/>
@@ -740,5 +828,6 @@
         <image name="SignUp-Transitioanl-Logo-Large" width="374" height="165"/>
         <image name="TXTEmail" width="353" height="69"/>
         <image name="c2" width="346" height="301"/>
+        <image name="load_image" width="100" height="100"/>
     </resources>
 </document>

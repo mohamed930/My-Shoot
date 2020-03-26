@@ -23,6 +23,7 @@
 		D351690F242A9BDC007E655D /* CatagoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351690D242A9BDC007E655D /* CatagoryCell.swift */; };
 		D3516910242A9BDC007E655D /* CatagoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D351690E242A9BDC007E655D /* CatagoryCell.xib */; };
 		D3C6F79F242CEDCD00F65C9D /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6F79E242CEDCD00F65C9D /* ProfileViewController.swift */; };
+		D3C6F7A1242CFDDC00F65C9D /* AddImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3C6F7A0242CFDDC00F65C9D /* AddImageViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		D351690D242A9BDC007E655D /* CatagoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoryCell.swift; sourceTree = "<group>"; };
 		D351690E242A9BDC007E655D /* CatagoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatagoryCell.xib; sourceTree = "<group>"; };
 		D3C6F79E242CEDCD00F65C9D /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		D3C6F7A0242CFDDC00F65C9D /* AddImageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddImageViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +115,7 @@
 				D31A334C242ABBD100B90350 /* ImagesViewController.swift */,
 				D31A334E242AC96100B90350 /* SaveImageViewController.swift */,
 				D3C6F79E242CEDCD00F65C9D /* ProfileViewController.swift */,
+				D3C6F7A0242CFDDC00F65C9D /* AddImageViewController.swift */,
 				D3516901242A6483007E655D /* Cell */,
 			);
 			path = Controllers;
@@ -212,6 +215,7 @@
 			files = (
 				D31A334D242ABBD100B90350 /* ImagesViewController.swift in Sources */,
 				D351690A242A77F8007E655D /* SignUpViewController.swift in Sources */,
+				D3C6F7A1242CFDDC00F65C9D /* AddImageViewController.swift in Sources */,
 				D35168EC242A6211007E655D /* ViewController.swift in Sources */,
 				D3516904242A64B5007E655D /* ImageCell.swift in Sources */,
 				D35168F2242A6211007E655D /* My_Shoot.xcdatamodeld in Sources */,

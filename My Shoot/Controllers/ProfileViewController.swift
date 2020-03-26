@@ -102,6 +102,4 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     @objc func ViewTapped(recognizer: UIGestureRecognizer) {
         View1.endEditing(true)
     }
-    
-    
 }

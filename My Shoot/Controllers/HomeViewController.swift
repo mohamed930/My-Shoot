@@ -56,7 +56,7 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     
     // TODO: This Action Method For UpdateProfile For USER Or Add Image To App For ADMIN.
     @IBAction func BTNProfile(_ sender: Any) {
-        self.performSegue(withIdentifier: "UpdateProfile", sender: self)
+        self.performSegue(withIdentifier: "AddPhoto", sender: self)
     }
     
     // TODO: These Method For TableView.
