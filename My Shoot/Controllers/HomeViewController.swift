@@ -61,7 +61,7 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     
     // TODO: This Action Method For Add Flix Coin.
     @IBAction func BTNAddFlix(_ sender: Any) {
-        self.performSegue(withIdentifier: "ChargeFlix", sender: self)
+        self.performSegue(withIdentifier: "SendFlix", sender: self)
     }
     
     // TODO: These Method For TableView.

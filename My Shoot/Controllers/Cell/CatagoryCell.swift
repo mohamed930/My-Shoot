@@ -17,7 +17,6 @@ class CatagoryCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
         self.LBLCatagoryTitle.layer.cornerRadius = 9.0
         self.LBLCatagoryTitle.layer.masksToBounds = true
     }
