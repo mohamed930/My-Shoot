@@ -36,4 +36,8 @@ class RequestsViewController: UIViewController , UITableViewDelegate , UITableVi
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.performSegue(withIdentifier: "Confirm", sender: self)
+    }
+    
 }
