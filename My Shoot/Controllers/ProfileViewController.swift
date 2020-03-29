@@ -7,6 +7,10 @@
 //
 
 import UIKit
+import FirebaseAuth
+import FirebaseStorage
+import FirebaseFirestore
+import SVProgressHUD
 
 class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
@@ -16,11 +20,16 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     @IBOutlet weak var ProfileImage: UIImageView!
     @IBOutlet weak var V: NSLayoutConstraint!
     @IBOutlet weak var View1: UIView!
+    var GlobalImage:UIImage?
+    var id = ""
+    var ImagePath = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Do any additional setup after loading the view.
+        
+        // This Sektion For Desgin On This Page
+        // ------------------------------------------
         Tools.setLeftPadding(textfield: TXTName, Text: "Enter Your Updated Name", padding: 25.0)
         Tools.setLeftPadding(textfield: TXTEmail, Text: "Enter Your Updated Email", padding: 25.0)
         
@@ -28,6 +37,11 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         View1.addGestureRecognizer(theTap)
         Tools.MakeCircle(ProfileImage)
         ProfileImage.clipsToBounds = true
+        // ------------------------------------------
+        
+        // This Sektion For BackEnd on This Page
+        getDataProfile()
+        
     }
     
     // TODO: This Action Method For Button Back.
@@ -36,6 +50,7 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     }
     
     // TODO: This Action Method For Pick Image From USER.
+    // --------------------------------------------------
     @IBAction func BTNPickImage(_ sender: Any) {
         let image = UIImagePickerController()
         image.delegate = self
@@ -50,6 +65,7 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         if let image = info[UIImagePickerController.InfoKey.originalImage] as? UIImage
         {
             ProfileImage.image = image
+            GlobalImage = image
         }
         else
         {
@@ -59,8 +75,63 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     }
     // ---------------------------------------
     
+    
     // TODO: This Action Method For Send Update To Database.
     @IBAction func BTNUpdateProfile(_ sender: Any) {
+        UpdateData()
+    }
+    
+    // TODO: This Mathod For Update Profile.
+    func UpdateData() {
+        SVProgressHUD.show()
+        
+        if GlobalImage == nil {
+            Firestore.firestore().collection("Guest").document(id).updateData([
+                "Name":self.TXTName.text!,
+                "ImagePath":self.ImagePath
+            ]){ err in
+                if let err = err {
+                    SVProgressHUD.dismiss()
+                    print("Error updating document: \(err)")
+                } else {
+                    SVProgressHUD.dismiss()
+                    Tools.createAlert(Title: "Success", Mess: "Update Data Successfully", ob: self)
+                }
+            }
+        }
+        else {
+            let url = Tools.UploadImage(url: "gs://flix-coin-system.appspot.com/Guest Picture", GlobalImage: GlobalImage!, name: TXTEmail.text!)
+            
+            Firestore.firestore().collection("Guest").document(id).updateData([
+                "Name":self.TXTName.text!,
+                "ImagePath":url
+            ]){ err in
+                if let err = err {
+                    SVProgressHUD.dismiss()
+                    print("Error updating document: \(err)")
+                } else {
+                    SVProgressHUD.dismiss()
+                    Tools.createAlert(Title: "Success", Mess: "Update Data Successfully", ob: self)
+                }
+            }
+        }
+    }
+    
+    // TODO: This Method For Getting Data.
+    func getDataProfile() {
+        SVProgressHUD.show()
+        let Email = Auth.auth().currentUser?.email
+        
+        SVProgressHUD.show()
+        Firestore.firestore().collection("Guest").whereField("Email", isEqualTo: Email!).getDocuments { (quary, error) in
+            for doc in quary!.documents {
+                self.id = doc.documentID
+                self.TXTName.text = doc.get("Name") as? String
+                self.TXTEmail.text = doc.get("Email") as? String
+                self.ImagePath = doc.get("ImagePath") as! String
+                Tools.downloadImage(FolderURL: "gs://flix-coin-system.appspot.com/Guest Picture", url: doc.get("ImagePath") as! String, Image: self.ProfileImage)
+            }
+        }
     }
     
     
