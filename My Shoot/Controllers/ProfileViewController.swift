@@ -12,6 +12,10 @@ import FirebaseStorage
 import FirebaseFirestore
 import SVProgressHUD
 
+protocol ProfileImage {
+    func ChangeImage(Image:UIImage)
+}
+
 class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePickerControllerDelegate , UINavigationControllerDelegate {
     
     // TODO: This Sektion For Intialize The Varible Here.
@@ -23,6 +27,8 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     var GlobalImage:UIImage?
     var id = ""
     var ImagePath = ""
+    
+    var delegate:ProfileImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -100,6 +106,7 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
             }
         }
         else {
+            delegate?.ChangeImage(Image: GlobalImage!)
             let url = Tools.UploadImage(url: "gs://flix-coin-system.appspot.com/Guest Picture", GlobalImage: GlobalImage!, name: TXTEmail.text!)
             
             Firestore.firestore().collection("Guest").document(id).updateData([
