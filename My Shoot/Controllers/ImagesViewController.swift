@@ -7,24 +7,53 @@
 //
 
 import UIKit
+import FirebaseFirestore
+import SVProgressHUD
 
 class ImagesViewController: UIViewController , UICollectionViewDataSource , UICollectionViewDelegate , UICollectionViewDelegateFlowLayout {
     
     // TODO: This Sektion For Intialize The Varible.
     @IBOutlet weak var collectionView: UICollectionView!
+    var Name = ""
+    var PickImageURL = ""
     
-    let arr = ["c2","c2","c2","c2","c2","c2","c2","c2","c2","c2"]
+    
+    var arr = Array<ImageData>()
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         collectionView.register(UINib(nibName: "ImageCell", bundle: nil), forCellWithReuseIdentifier: "Cell")
+        
+        getDataFromDataBase()
     }
     
     // TODO: This Action For Button Back.
     @IBAction func BTNback(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    // TODO: This Method For Getting Images For Firestore.
+    func getDataFromDataBase() {
+        
+        arr.removeAll()
+        
+        SVProgressHUD.show()
+        Firestore.firestore().collection(Name).getDocuments { (quary, error) in
+            if error != nil {
+                Tools.createAlert(Title: "Error", Mess: "Your Internet is Poor", ob: self)
+            }
+            else {
+                for doc in quary!.documents {
+                    let ob = ImageData()
+                    ob.setImageURL(ImageURL: doc.get("ImageURL") as! String)
+                    ob.setImageCoast(ImageCoast: doc.get("FlixCoin") as! Int)
+                    self.arr.append(ob)
+                    self.collectionView.reloadData()
+                }
+            }
+        }
     }
     
     
@@ -37,7 +66,7 @@ class ImagesViewController: UIViewController , UICollectionViewDataSource , UICo
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell : ImageCell = collectionView.dequeueReusableCell(withReuseIdentifier: "Cell", for: indexPath) as! ImageCell
         
-        cell.Image.image = UIImage(named: arr[indexPath.row])
+        Tools.downloadImage(FolderURL: "gs://flix-coin-system.appspot.com/\(Name)", url: arr[indexPath.row].getImageURL(), Image: cell.Image)
         
         return cell
     }
@@ -52,9 +81,18 @@ class ImagesViewController: UIViewController , UICollectionViewDataSource , UICo
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.performSegue(withIdentifier: "SavedImage", sender: self)
+        self.performSegue(withIdentifier: "SavedImage", sender: arr[indexPath.row])
     }
-    
     // --------------------------------------
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "SavedImage" {
+            if let f1 = sender as? ImageData {
+                let vc = segue.destination as! SaveImageViewController
+                vc.PickImageURL = f1
+                vc.URL = "gs://flix-coin-system.appspot.com/\(Name)"
+            }
+        }
+    }
     
 }

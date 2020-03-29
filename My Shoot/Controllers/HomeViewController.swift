@@ -24,6 +24,7 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     
     var Email = ""
     var Number = 0
+    var CName = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -138,6 +139,7 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        CName = Arr[indexPath.row]
         self.performSegue(withIdentifier: "CollectionPhoto", sender: self)
     }
     // ---------------------------------------
@@ -220,6 +222,10 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
         if segue.identifier == "UpdateProfile" {
             let vc = segue.destination as! ProfileViewController
             vc.delegate = self
+        }
+        else if segue.identifier == "CollectionPhoto" {
+            let vc = segue.destination as! ImagesViewController
+            vc.Name = CName
         }
     }
     
