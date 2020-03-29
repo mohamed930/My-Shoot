@@ -10,6 +10,7 @@ import UIKit
 import FirebaseStorage
 import FirebaseFirestore
 import SVProgressHUD
+import FirebaseAuth
 
 class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDataSource {
     
@@ -17,10 +18,12 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     @IBOutlet weak var AddProbertiy: UIButton!
     @IBOutlet weak var tableview: UITableView!
     @IBOutlet weak var ProfileImage: UIImageView!
+    @IBOutlet weak var LBLFlixCount: UILabel!
     
     var Arr = [""]
     
     var Email = ""
+    var Number = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -51,8 +54,17 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
         
         // This Sektion For BakcEnd Code Here
         // --------------------------------------
-        getImage()
-        getCollecitonName()
+        print("The Number = \(Number)")
+        if Number == 1 {
+            self.Email = (Auth.auth().currentUser?.email)!
+            getImage()
+            getCollecitonName()
+        }
+        else {
+            getImage()
+            getCollecitonName()
+        }
+        
         // --------------------------------------
     }
     
@@ -158,6 +170,8 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
                     for document in querySnapshot!.documents {
                         
                         Tools.downloadImage(FolderURL: "gs://flix-coin-system.appspot.com/Guest Picture", url: document.get("ImagePath") as! String, Image: self.ProfileImage)
+                        let x = String(document.get("FlixCount") as! Int)
+                        self.LBLFlixCount.text = x
                     }
                 }
             }

@@ -29,7 +29,7 @@
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="SignUp-Transitioanl-Logo-Large" translatesAutoresizingMaskIntoConstraints="NO" id="Qef-Wq-0hq">
-                                <rect key="frame" x="0.0" y="102" width="375.00000000000006" height="114"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="114"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="114" id="DCc-Y6-nLu"/>
                                 </constraints>
@@ -177,6 +177,7 @@
                         <outlet property="TXTName" destination="DA5-J5-2Lr" id="OFw-y2-CHH"/>
                         <outlet property="TXTPassword" destination="1r9-u4-gai" id="xd4-qn-3nm"/>
                         <outlet property="V" destination="WcK-rF-Og5" id="vbx-VS-dhM"/>
+                        <segue destination="ivK-gQ-dNf" kind="showDetail" identifier="CreatUser" id="Y5z-Nd-fCN"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xHR-Zp-EMr" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -898,6 +899,7 @@
                     </view>
                     <connections>
                         <outlet property="AddProbertiy" destination="kdS-3e-wyv" id="Xa3-55-nmW"/>
+                        <outlet property="LBLFlixCount" destination="F09-z8-MfY" id="c5B-W8-Apl"/>
                         <outlet property="ProfileImage" destination="kbk-rC-5XU" id="Idu-mD-bWX"/>
                         <outlet property="tableview" destination="9hm-kn-iqx" id="QHY-kK-nxG"/>
                         <segue destination="2Ua-XB-N8l" kind="showDetail" identifier="CollectionPhoto" id="pfn-YN-FyU"/>
@@ -1091,4 +1093,7 @@
         <image name="c3" width="355" height="324"/>
         <image name="load_image" width="100" height="100"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="Y5z-Nd-fCN"/>
+    </inferredMetricsTieBreakers>
 </document>

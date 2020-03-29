@@ -117,13 +117,23 @@ class SignUpViewController: UIViewController , UITextFieldDelegate, UIImagePicke
                 
                 self.url = Tools.UploadImage(url: "gs://flix-coin-system.appspot.com/Guest Picture", GlobalImage: self.GlobalImage!, name: self.TXTEmail.text!)
                 
-                let dic : [String:String] = ["Name":self.TXTName.text!,
+                let dic : [String:Any] = ["Name":self.TXTName.text!,
                                              "Email":self.TXTEmail.text!,
+                                             "FlixCount":Int(50),
                                              "ImagePath":self.url]
                 
                 Tools.addDataToFirebase(collectionName: "Guest", dic: dic, Mess: "Your Account is Created Successfully", ob: self)
+                
+                self.performSegue(withIdentifier: "CreatUser", sender: self)
             }
         })
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "CreatUser"{
+            let vc = segue.destination as! HomeViewController
+            vc.Number = 1
+        }
     }
     
     // TODO: This Sektion In Code For PickImage From User And Put it in her profile.

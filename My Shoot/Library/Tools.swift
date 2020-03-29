@@ -36,7 +36,7 @@ class Tools {
         ob.present(alert,animated:true,completion: nil)
     }
     
-    public static func addDataToFirebase(collectionName:String , dic:[String:String] , Mess:String , ob:UIViewController) {
+    public static func addDataToFirebase(collectionName:String , dic:[String:Any] , Mess:String , ob:UIViewController) {
         Firestore.firestore().collection(collectionName).document().setData(dic){
             err in
             if err != nil {
