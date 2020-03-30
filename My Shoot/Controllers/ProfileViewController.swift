@@ -56,6 +56,27 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         self.dismiss(animated: true, completion: nil)
     }
     
+    // TODO: THis Action Method For Logout Button.
+    @IBAction func BTNLogout(_ sender: Any) {
+        
+        let alert = UIAlertController(title: "Logout", message: "Are You Sure to logout?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "cancel", style: .cancel, handler: nil))
+        
+        alert.addAction(UIAlertAction(title: "Log out", style: .destructive, handler: {
+            (alertAction) in
+            do {
+                try Auth.auth().signOut()
+            } catch {
+                print("Error")
+                Tools.createAlert(Title: "Error", Mess: "there is error in sign out!", ob: self)
+            }
+            self.performSegue(withIdentifier: "Logout", sender: self)
+        }))
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
     // TODO: This Action Method For Pick Image From USER.
     // --------------------------------------------------
     @IBAction func BTNPickImage(_ sender: Any) {

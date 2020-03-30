@@ -536,7 +536,6 @@
         <!--Profile View Controller-->
         <scene sceneID="ixk-WK-uby">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CcW-2K-d9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="46R-hE-Dzc" customClass="ProfileViewController" customModule="My_Shoot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Eug-RW-hLC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
@@ -563,6 +562,9 @@
                                             <constraint firstAttribute="width" constant="60" id="yBx-qe-p0O"/>
                                         </constraints>
                                         <state key="normal" backgroundImage="Logout"/>
+                                        <connections>
+                                            <action selector="BTNLogout:" destination="46R-hE-Dzc" eventType="touchUpInside" id="N7B-O8-zYC"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -687,8 +689,10 @@
                         <outlet property="TXTName" destination="1KO-lD-CIZ" id="UkF-tx-lZr"/>
                         <outlet property="V" destination="wxp-5l-Fqe" id="uup-8S-dDp"/>
                         <outlet property="View1" destination="ALO-4M-t9n" id="Sfc-jB-fqj"/>
+                        <segue destination="BYZ-38-t0r" kind="showDetail" identifier="Logout" id="2hm-q6-oFi"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="CcW-2K-d9Y" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="229.59999999999999" y="1597.536945812808"/>
         </scene>
