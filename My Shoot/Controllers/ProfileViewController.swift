@@ -22,8 +22,9 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     @IBOutlet weak var TXTName: UITextField!
     @IBOutlet weak var TXTEmail: UITextField!
     @IBOutlet weak var ProfileImage: UIImageView!
-    @IBOutlet weak var V: NSLayoutConstraint!
     @IBOutlet weak var View1: UIView!
+    @IBOutlet weak var V: NSLayoutConstraint!
+    
     var GlobalImage:UIImage?
     var id = ""
     var ImagePath = ""
@@ -148,10 +149,12 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
     
     
     //TODO: Declare textFieldDidBeginEditing here:
+    
+    //TODO: Declare textFieldDidBeginEditing here:
     func textFieldDidBeginEditing(_ textField: UITextField) {
         
         UIView.animate(withDuration: 0.5) {
-            self.V.constant = 505
+            self.V.constant = 308
             self.view.layoutIfNeeded()
         }
     }

@@ -12,4 +12,5 @@ target 'My Shoot' do
   pod 'Firebase/Core'
   pod 'Firebase/Firestore'
   pod 'SVProgressHUD'
+  pod 'Alamofire'
 end

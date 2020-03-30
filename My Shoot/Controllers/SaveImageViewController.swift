@@ -12,6 +12,7 @@ import SafariServices
 import FirebaseStorage
 import FirebaseAuth
 import FirebaseFirestore
+import Alamofire
 
 class SaveImageViewController: UIViewController {
     
@@ -43,9 +44,12 @@ class SaveImageViewController: UIViewController {
         alert.addAction(action1)
         
         let action2 = UIAlertAction(title: "Add To BookMarks", style: .default) { (alert) in
-            
+            self.SaveToBookMarks()
         }
         alert.addAction(action2)
+        
+        let action3 = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
+        alert.addAction(action3)
         
         present(alert,animated: true,completion: nil)
         
@@ -54,7 +58,7 @@ class SaveImageViewController: UIViewController {
     
     // TODO: This Method Check If You Have Flix Coin or not to buy Image.
     func buyImage() {
-        
+        SVProgressHUD.show()
         let Email = Auth.auth().currentUser?.email
         
         Firestore.firestore().collection("Guest").whereField("Email", isEqualTo: Email!).getDocuments { (quary, error) in
@@ -86,6 +90,7 @@ class SaveImageViewController: UIViewController {
                 }
                 else {
                     // You Can't
+                    SVProgressHUD.dismiss()
                     Tools.createAlert(Title: "Error", Mess: "You Must add \((self.PickImageURL?.getImageCoast())! - self.coin) or more flix to buy it", ob: self)
                 }
             }
@@ -101,7 +106,6 @@ class SaveImageViewController: UIViewController {
         let starsRef = StorageRef.child(PickImageURL!.getImageURL())
         
         // Fetch the download URL
-        SVProgressHUD.show()
         starsRef.downloadURL { url22, error in
             if error != nil {
                 print("Error \(error!)")
@@ -115,6 +119,42 @@ class SaveImageViewController: UIViewController {
                 
             }
         }
+    }
+    
+    // TODO: This Method For Save Image In CoreData
+    func SaveToBookMarks() {
+        let ob = SavedImages(context: context)
+        ob.coast = Int32(self.PickImageURL!.getImageCoast())
+        
+        // This Sektion Of Code For Download Image And Save it in CoreData.
+        
+        let StorageRef = Storage.storage().reference(forURL: URL1!)
+        
+        let starsRef = StorageRef.child(PickImageURL!.getImageURL())
+        SVProgressHUD.show()
+        // Fetch the download URL
+        starsRef.downloadURL { url22, error in
+            if error != nil {
+                print("Error \(error!)")
+            } else {
+                // Get the download URL for 'images/stars.jpg'
+                
+                Alamofire.request(url22!).responseData {
+                    (response) in
+                    if response.error != nil {
+                        Tools.createAlert(Title: "Failed", Mess: "\(response.result)", ob: self)
+                    }
+                    
+                    if let data = response.data {
+                        ob.image = UIImage(data: data)
+                        ad.saveContext()
+                        SVProgressHUD.dismiss()
+                        Tools.createAlert(Title: "Success", Mess: "Your Article is Saved Successfully", ob: self)
+                    }
+                }
+            }
+        }
+        
     }
     
     

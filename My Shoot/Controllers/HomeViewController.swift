@@ -12,7 +12,7 @@ import FirebaseFirestore
 import SVProgressHUD
 import FirebaseAuth
 
-class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , ProfileImage {
+class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , ImageProfile1 {
     
     // TODO: This Sektion For Intialize Varible Here.
     @IBOutlet weak var AddProbertiy: UIButton!
@@ -239,8 +239,8 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "UpdateProfile" {
-            let vc = segue.destination as! ProfileViewController
-            vc.delegate = self
+            let vc = segue.destination as! OptionViewController
+            vc.d = self
         }
         else if segue.identifier == "CollectionPhoto" {
             let vc = segue.destination as! ImagesViewController
@@ -248,7 +248,7 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
         }
     }
     
-    func ChangeImage(Image: UIImage) {
+    func getImage(Image: UIImage) {
         ProfileImage.image = Image
     }
 }
