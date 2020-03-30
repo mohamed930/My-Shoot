@@ -90,7 +90,7 @@ class ImagesViewController: UIViewController , UICollectionViewDataSource , UICo
             if let f1 = sender as? ImageData {
                 let vc = segue.destination as! SaveImageViewController
                 vc.PickImageURL = f1
-                vc.URL = "gs://flix-coin-system.appspot.com/\(Name)"
+                vc.URL1 = "gs://flix-coin-system.appspot.com/\(Name)"
             }
         }
     }

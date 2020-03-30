@@ -123,6 +123,25 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
     }
     
     
+    @IBAction func BTNLoadFlix(_ sender: Any) {
+        
+        let e = Auth.auth().currentUser?.email
+        
+        SVProgressHUD.show()
+        Firestore.firestore().collection("Guest").whereField("Email", isEqualTo: e!).getDocuments { (quary, error) in
+            if error != nil {
+                Tools.createAlert(Title: "Erorr", Mess: "Your Internet isn't stable", ob: self)
+            }
+            else {
+                for doc in quary!.documents {
+                    self.LBLFlixCount.text = String(doc.get("FlixCount") as! Int)
+                    SVProgressHUD.dismiss()
+                }
+            }
+        }
+    }
+    
+    
     
     // TODO: These Method For TableView.
     // ---------------------------------------

@@ -805,11 +805,23 @@
                                                     <action selector="BTNAddFlix:" destination="ivK-gQ-dNf" eventType="touchUpInside" id="eBB-vF-Ou5"/>
                                                 </connections>
                                             </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8e-hO-AN8">
+                                                <rect key="frame" x="49" y="5" width="33" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="OkU-n4-GQH"/>
+                                                    <constraint firstAttribute="width" constant="33" id="j47-kM-aX1"/>
+                                                </constraints>
+                                                <connections>
+                                                    <action selector="BTNLoadFlix:" destination="ivK-gQ-dNf" eventType="touchUpInside" id="ZER-t2-JsG"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" red="1" green="0.35686274509999999" blue="0.80784313730000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <constraints>
                                             <constraint firstAttribute="bottom" secondItem="NRL-DN-Pxw" secondAttribute="bottom" constant="7" id="32k-6q-XS7"/>
                                             <constraint firstItem="F09-z8-MfY" firstAttribute="top" secondItem="plN-ty-cLM" secondAttribute="top" constant="8" id="6xz-J5-jXs"/>
+                                            <constraint firstItem="f8e-hO-AN8" firstAttribute="top" secondItem="plN-ty-cLM" secondAttribute="top" constant="5" id="FJE-iJ-LYV"/>
+                                            <constraint firstAttribute="bottom" secondItem="f8e-hO-AN8" secondAttribute="bottom" constant="8" id="H7l-pX-lVy"/>
                                             <constraint firstItem="NRL-DN-Pxw" firstAttribute="top" secondItem="plN-ty-cLM" secondAttribute="top" constant="5" id="Pko-kt-PJh"/>
                                             <constraint firstItem="F09-z8-MfY" firstAttribute="leading" secondItem="plN-ty-cLM" secondAttribute="leading" constant="7" id="QN4-Du-vnh"/>
                                             <constraint firstItem="d2y-VS-VPa" firstAttribute="leading" secondItem="NRL-DN-Pxw" secondAttribute="trailing" constant="8" id="c8b-T2-pLu"/>
@@ -817,7 +829,9 @@
                                             <constraint firstAttribute="width" constant="121" id="pRI-q6-8tD"/>
                                             <constraint firstAttribute="bottom" secondItem="F09-z8-MfY" secondAttribute="bottom" constant="10" id="q2J-8A-Wmm"/>
                                             <constraint firstAttribute="bottom" secondItem="d2y-VS-VPa" secondAttribute="bottom" constant="13" id="sf4-RB-GqY"/>
+                                            <constraint firstItem="f8e-hO-AN8" firstAttribute="leading" secondItem="F09-z8-MfY" secondAttribute="trailing" id="uzc-jE-kPn"/>
                                             <constraint firstItem="d2y-VS-VPa" firstAttribute="top" secondItem="plN-ty-cLM" secondAttribute="top" constant="11" id="w9k-vr-WbH"/>
+                                            <constraint firstItem="d2y-VS-VPa" firstAttribute="leading" secondItem="f8e-hO-AN8" secondAttribute="trailing" constant="8" id="xzm-qe-nfD"/>
                                             <constraint firstAttribute="trailing" secondItem="d2y-VS-VPa" secondAttribute="trailing" constant="12" id="ya9-P6-txx"/>
                                             <constraint firstAttribute="height" constant="43" id="yfU-Fv-827"/>
                                         </constraints>

@@ -77,6 +77,7 @@ class Tools {
     
     public static func downloadImage(FolderURL:String , url:String , Image:UIImageView)  {
         
+        SVProgressHUD.show()
         let StorageRef = Storage.storage().reference(forURL: FolderURL)
         
         let islandRef = StorageRef.child(url)
