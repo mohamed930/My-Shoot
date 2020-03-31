@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import MessageUI
 
 protocol ImageProfile1 {
     func getImage(Image:UIImage)
@@ -74,10 +75,52 @@ class OptionViewController: UIViewController , ProfileImage , UICollectionViewDe
         else if indexPath.row == 1 {
             self.performSegue(withIdentifier: "SavedImages", sender: self)
         }
+        else if indexPath.row == 2 {
+            sendEmail()
+        }
         else if indexPath.row == 3 {
             Tools.createAlert(Title: "Info", Mess: "This App Gives User 4K Images he wanna to downloaded it Developed by Eng/ Mohamed Ali Ebrahim", ob: self)
         }
     }
     // ------------------------------------------------------
+    
+    // TODO: This Method For send Email To Admin About Any Problem
+    public func sendEmail() {
+        guard MFMailComposeViewController.canSendMail() else {
+            // Show alert info the user
+            return
+        }
+        
+        let composer = MFMailComposeViewController()
+        composer.mailComposeDelegate = self
+        composer.setToRecipients(["mohammedali12477@gmial.com"])
+        
+        self.present(composer, animated: true)
+    }
 
+}
+
+extension OptionViewController:MFMailComposeViewControllerDelegate {
+    
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        
+        if error != nil {
+            controller.dismiss(animated: true)
+            return
+        }
+        
+        switch result {
+        case .cancelled:
+            print("canceled")
+        case.failed:
+            print("failed")
+        case .saved:
+            print("Saved")
+        case .sent:
+            print("Sened")
+        @unknown default:
+            print("Error")
+        }
+        
+    }
 }
