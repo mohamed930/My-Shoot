@@ -25,6 +25,8 @@
 		D351690C242A9200007E655D /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351690B242A9200007E655D /* HomeViewController.swift */; };
 		D351690F242A9BDC007E655D /* CatagoryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D351690D242A9BDC007E655D /* CatagoryCell.swift */; };
 		D3516910242A9BDC007E655D /* CatagoryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D351690E242A9BDC007E655D /* CatagoryCell.xib */; };
+		D3A949652432BE5900F33E81 /* BookMarksImagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A949642432BE5900F33E81 /* BookMarksImagesViewController.swift */; };
+		D3A949672432C56500F33E81 /* BookMarksDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3A949662432C56500F33E81 /* BookMarksDetailsViewController.swift */; };
 		D3B92A10242FE6160054F7A1 /* ConfirmChargeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B92A0F242FE6160054F7A1 /* ConfirmChargeViewController.swift */; };
 		D3B92A12242FECBB0054F7A1 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D3B92A11242FECBA0054F7A1 /* GoogleService-Info.plist */; };
 		D3BC8A5B2430EB8900F9A710 /* ImageData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3BC8A5A2430EB8900F9A710 /* ImageData.swift */; };
@@ -61,6 +63,8 @@
 		D351690B242A9200007E655D /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		D351690D242A9BDC007E655D /* CatagoryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatagoryCell.swift; sourceTree = "<group>"; };
 		D351690E242A9BDC007E655D /* CatagoryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CatagoryCell.xib; sourceTree = "<group>"; };
+		D3A949642432BE5900F33E81 /* BookMarksImagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarksImagesViewController.swift; sourceTree = "<group>"; };
+		D3A949662432C56500F33E81 /* BookMarksDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookMarksDetailsViewController.swift; sourceTree = "<group>"; };
 		D3B92A0F242FE6160054F7A1 /* ConfirmChargeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmChargeViewController.swift; sourceTree = "<group>"; };
 		D3B92A11242FECBA0054F7A1 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D3BC8A5A2430EB8900F9A710 /* ImageData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageData.swift; sourceTree = "<group>"; };
@@ -160,6 +164,8 @@
 				D31B0BD3242E6CEC00B39577 /* RequestsViewController.swift */,
 				D3B92A0F242FE6160054F7A1 /* ConfirmChargeViewController.swift */,
 				D3D8DFD724325C4A00E9707F /* OptionViewController.swift */,
+				D3A949642432BE5900F33E81 /* BookMarksImagesViewController.swift */,
+				D3A949662432C56500F33E81 /* BookMarksDetailsViewController.swift */,
 				D3516901242A6483007E655D /* Cell */,
 			);
 			path = Controllers;
@@ -328,10 +334,12 @@
 				D31B0BD6242E712D00B39577 /* color.swift in Sources */,
 				D3516904242A64B5007E655D /* ImageCell.swift in Sources */,
 				D35168F2242A6211007E655D /* My_Shoot.xcdatamodeld in Sources */,
+				D3A949672432C56500F33E81 /* BookMarksDetailsViewController.swift in Sources */,
 				D3B92A10242FE6160054F7A1 /* ConfirmChargeViewController.swift in Sources */,
 				D31A334F242AC96100B90350 /* SaveImageViewController.swift in Sources */,
 				D3C6F79F242CEDCD00F65C9D /* ProfileViewController.swift in Sources */,
 				D35168EA242A6211007E655D /* AppDelegate.swift in Sources */,
+				D3A949652432BE5900F33E81 /* BookMarksImagesViewController.swift in Sources */,
 				D31B0BD4242E6CEC00B39577 /* RequestsViewController.swift in Sources */,
 				D351690C242A9200007E655D /* HomeViewController.swift in Sources */,
 				D3C6F7AB242D0AFA00F65C9D /* ChargeFlixViewController.swift in Sources */,

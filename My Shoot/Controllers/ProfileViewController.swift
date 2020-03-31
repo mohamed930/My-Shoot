@@ -163,6 +163,13 @@ class ProfileViewController: UIViewController , UITextFieldDelegate , UIImagePic
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "Logout" {
+            let vc = segue.destination as! ViewController
+            vc.Action = 11
+        }
+    }
+    
     
     ///////////////////////////////////////////
     

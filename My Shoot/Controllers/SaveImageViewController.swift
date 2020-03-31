@@ -35,7 +35,10 @@ class SaveImageViewController: UIViewController {
     var coin = 0
     var id = ""
     
+    // TODO: This Action Method For Button Save
     @IBAction func BTNSave(_ sender: Any) {
+        
+        // Make Action Sheet For cHooce Action
         let alert = UIAlertController(title: "Attention", message: "Chooce Your Action", preferredStyle: .actionSheet)
         
         let action1 = UIAlertAction(title: "Download Image", style: .default) { (alert) in
@@ -74,7 +77,7 @@ class SaveImageViewController: UIViewController {
                 // Make Aciton
                 if self.coin >= (self.PickImageURL?.getImageCoast())! {
                     // Buy The Image
-                    Firestore.firestore().collection("Guest").document(self.id).updateData([
+              Firestore.firestore().collection("Guest").document(self.id).updateData([
                         "FlixCount": Int(self.coin - (self.PickImageURL?.getImageCoast())!)
                     ]){
                         error in
@@ -125,6 +128,7 @@ class SaveImageViewController: UIViewController {
     func SaveToBookMarks() {
         let ob = SavedImages(context: context)
         ob.coast = Int32(self.PickImageURL!.getImageCoast())
+        ob.statue = false
         
         // This Sektion Of Code For Download Image And Save it in CoreData.
         

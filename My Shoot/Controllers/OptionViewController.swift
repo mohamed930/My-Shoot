@@ -71,6 +71,9 @@ class OptionViewController: UIViewController , ProfileImage , UICollectionViewDe
         if indexPath.row == 0 {
             self.performSegue(withIdentifier: "UpdateProfile1", sender: self)
         }
+        else if indexPath.row == 1 {
+            self.performSegue(withIdentifier: "SavedImages", sender: self)
+        }
         else if indexPath.row == 3 {
             Tools.createAlert(Title: "Info", Mess: "This App Gives User 4K Images he wanna to downloaded it Developed by Eng/ Mohamed Ali Ebrahim", ob: self)
         }
