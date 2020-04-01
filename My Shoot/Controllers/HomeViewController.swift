@@ -12,7 +12,7 @@ import FirebaseFirestore
 import SVProgressHUD
 import FirebaseAuth
 
-class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , ImageProfile1 {
+class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDataSource , ImageProfile1 , AddFilx  {
     
     // TODO: This Sektion For Intialize Varible Here.
     @IBOutlet weak var AddProbertiy: UIButton!
@@ -246,9 +246,17 @@ class HomeViewController: UIViewController , UITableViewDelegate , UITableViewDa
             let vc = segue.destination as! ImagesViewController
             vc.Name = CName
         }
+        else if segue.identifier == "ChargeFlix" {
+            let vc = segue.destination as! ChargeFlixViewController
+            vc.delegate = self
+        }
     }
     
     func getImage(Image: UIImage) {
         ProfileImage.image = Image
+    }
+    
+    func AddFlix(coin: Int) {
+        LBLFlixCount.text = "\(Int(LBLFlixCount.text!)! + coin)"
     }
 }

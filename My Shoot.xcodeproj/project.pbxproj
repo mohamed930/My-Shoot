@@ -38,6 +38,7 @@
 		D3D8DFD824325C4B00E9707F /* OptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8DFD724325C4A00E9707F /* OptionViewController.swift */; };
 		D3D8DFDB24325D1B00E9707F /* OptionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3D8DFD924325D1B00E9707F /* OptionCell.swift */; };
 		D3D8DFDC24325D1B00E9707F /* OptionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D3D8DFDA24325D1B00E9707F /* OptionCell.xib */; };
+		D3EF44302434E64D005A817C /* request.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EF442F2434E64C005A817C /* request.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		D3D8DFD724325C4A00E9707F /* OptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionViewController.swift; sourceTree = "<group>"; };
 		D3D8DFD924325D1B00E9707F /* OptionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OptionCell.swift; sourceTree = "<group>"; };
 		D3D8DFDA24325D1B00E9707F /* OptionCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OptionCell.xib; sourceTree = "<group>"; };
+		D3EF442F2434E64C005A817C /* request.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = request.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 			children = (
 				D35168F0242A6211007E655D /* My_Shoot.xcdatamodeld */,
 				D3BC8A5A2430EB8900F9A710 /* ImageData.swift */,
+				D3EF442F2434E64C005A817C /* request.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -343,6 +346,7 @@
 				D31B0BD4242E6CEC00B39577 /* RequestsViewController.swift in Sources */,
 				D351690C242A9200007E655D /* HomeViewController.swift in Sources */,
 				D3C6F7AB242D0AFA00F65C9D /* ChargeFlixViewController.swift in Sources */,
+				D3EF44302434E64D005A817C /* request.swift in Sources */,
 				D3516908242A6B02007E655D /* Tools.swift in Sources */,
 				D351690F242A9BDC007E655D /* CatagoryCell.swift in Sources */,
 			);
