@@ -92,8 +92,6 @@ class ConfirmChargeViewController: UIViewController {
             ImageCover.image = UIImage(named: "c3")
             TXTFlixAmount.text = "300 Flix"
         }
-        
-        
     }
     
 }
