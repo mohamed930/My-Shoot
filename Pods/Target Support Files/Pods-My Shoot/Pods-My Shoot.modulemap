@@ -1,0 +1,6 @@
+framework module Pods_My_Shoot {
+  umbrella header "Pods-My Shoot-umbrella.h"
+
+  export *
+  module * { export * }
+}
